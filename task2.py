@@ -11,21 +11,18 @@ print("Original Data:")
 print(df)
 
 incorrectphones =df[df["phone"].str.len() < 10]
-incorrectphones=incorrectphones["phone"].tolist()
 print("less then 10 numbers:\n",incorrectphones)
 if incorrectphones==[]:
     print("no duplicate phone numbers found")
 
 
 incorrectdob = df[~df['dob'].str.match('\d{2}-\d{2}-\d{4}')]
-incorrectdob = incorrectdob['dob'].tolist()
 print("duplicate DOB entries:\n",incorrectdob)
 if incorrectdob==[]:
     print("no duplicate DOB entries found")
 
 
 incorrectemail = df[~df['email'].str.contains('@gmail.com')]
-incorrectemail = incorrectemail['email'].tolist()
 print("incorrect email entries:\n",incorrectemail)
 if incorrectemail==[]:
     print("no incorrect email entries found")

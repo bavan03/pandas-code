@@ -1,9 +1,9 @@
 import pandas as  pd 
 import numpy as np
 data = {
-    "Name": ["bavan", "ben","", "jana","none"],
+    "Name": ["bavan", "ben","", "jana",None],
     "Age": [21,23,22,23,24],
-    "City": ["chennai","","banglore","mumbai","none"]
+    "City": ["chennai","","banglore","mumbai",None]
 }
 df= pd.DataFrame(data)
 log={}
@@ -29,28 +29,3 @@ print(df)
 df["Age"] = df["Age"]+1
 print("\n update age column:")
 print(df)
-
-
-df.drop(columns=["City"],inplace=True)
-print("\n removed city")
-print(df)
-
-
-new_row={"Name":"yuva","Age":25,"salary":75000}
-df.loc[len(df)] = new_row
-print("\n added new row:")
-print(df)
-
-
-df.loc[df["Name"]=="ben","salary"]=62000
-print("\n updated salary for ben:")
-print(df)
-
-
-df=df[df["Name"]!="jana"]
-print("\n removed row where name is jana:")
-print(df)
-
-df.to_csv("bavan_updated.csv",index=False)
-print("\n updated data saved to bavan_updated.csv")
-  
